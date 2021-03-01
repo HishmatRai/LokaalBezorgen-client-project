@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     height: "100%"
 },
 _logo: {
-    width: 200,
-    height: 200,
-    alignSelf: "center",
-    marginTop: 50
+    width: 170,
+    height: 170,
+    marginTop: "70%",
+    marginLeft:50
 },
 });
 
