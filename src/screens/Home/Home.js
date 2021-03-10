@@ -20,7 +20,7 @@ import {
 } from "@expo/vector-icons";
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
-const Search = (props) => {
+const Home = (props) => {
   const [dimensions, setDimensions] = useState({ window, screen });
 
   const onChange = ({ window, screen }) => {
@@ -34,12 +34,7 @@ const Search = (props) => {
     };
 
   });
-  let SearchHistory = [
-    { value: "Pizza" },
-    { value: "French Fries" },
-    { value: "Burger" },
-    { value: "Sushi" },
-  ]
+
   return (
     <View style={styles.container}>
       <StatusBar
@@ -49,39 +44,21 @@ const Search = (props) => {
         translucent={true}
       />
       <ScrollView>
-        <View style={{ margin: 20 }}>
-          <View style={styles.Search_main}>
-            <EvilIcons name="search" size={24} color="#999999" />
-            <TextInput
-              style={styles._input}
-              placeholder="Zoek een gerecht..."
-              placeholderTextColor="#999999"
-            />
-          </View>
-          <Text style={{ color: "#2B2B2B", fontSize: 15, marginTop: 20 }}>
-            Recente zoekopdrachten
-          </Text>
-          <View style={{ marginTop: 20 }}>
-            {SearchHistory.map((v, i) => {
-              return (
-                <View style={styles.Search_History}>
-                  <MaterialIcons name="access-time" size={24} color="#5E5E5E" />
-                  <Text style={styles._search_histiry_text}>{v.value}</Text>
-                </View>
-              )
-            })}
-          </View>
+        <View style={{ margin: 20,alignSelf:"center",justifyContent:"center" }}>
+
+<Text style={{color:"red",fontSize:30}}>Home</Text>
+
         </View>
       </ScrollView>
       <View style={styles._tab_navigation_main}>
         <View style={styles._tab_navigation}>
           <TouchableOpacity onPress={() => props.navigation.navigate("Home")}>
-            <Feather name="home" size={24} color="#5E5E5E" />
-            <Text style={styles.empty_text}></Text>
+            <Feather name="home" size={24} color="#FC6100" />
+            <Text style={styles._active_dot}>.</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
-            <FontAwesome name="search" size={24} color="#FC6100" />
-            <Text style={styles._active_dot}>.</Text>
+            <FontAwesome name="search" size={24} color="#5E5E5E" />
+            <Text style={styles.empty_text}></Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => props.navigation.navigate("Shopping")}>
             <Entypo name="shopping-bag" size={24} color="#5E5E5E" />
@@ -135,33 +112,8 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   //   tab navigation end
-  Search_main: {
-    flexDirection: "row",
-    marginTop: 30,
-    backgroundColor: "#F2F3F5",
-    padding: 5,
-    borderRadius: 10,
-    alignItems: "center",
-    alignSelf: "center",
-  },
-  _input: {
-    // fontWeight: "bold",
-    color: "gray",
-    height: 40,
-    paddingLeft: 20,
-    paddingRight: 20,
-    width: "90%",
-    // backgroundColor:"red"
-  },
-  Search_History: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 10
-  },
-  _search_histiry_text: {
-    color: "#5E5E5E",
-    marginLeft: 10
-  }
+
+
 });
 
-export default Search;
+export default Home;

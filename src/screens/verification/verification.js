@@ -50,11 +50,11 @@ const Verification = (props) => {
         <VerificationOtp />
         <View style={styles._proced}>
           <Text style={{color:"#5E5E5E",fontSize:15}}>Geen code ontvangen? </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigation.navigate("Signup")}>
             <Text style={{color:"#2F80ED",fontSize:15}}> STUUR OPNIEUW</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("Signup")}>
             <Text style={styles._button_txt}>Bevestigen</Text>
           </TouchableOpacity>
         </View>

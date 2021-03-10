@@ -15,7 +15,9 @@ const Intro = (props) => {
       Dimensions.removeEventListener("change", onChange);
     };
   });
-
+  setTimeout(() => {
+   props.navigation.navigate("Welcome");
+  }, 3000);
   return (
     <View style={styles.container} >
  <ImageBackground source={require('./../../images/intro_background_img.png')} style={styles._image}>

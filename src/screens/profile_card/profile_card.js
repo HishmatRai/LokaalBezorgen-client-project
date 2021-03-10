@@ -100,19 +100,19 @@ const ProfileCard = (props) => {
       </ScrollView>
       <View style={styles._tab_navigation_main}>
         <View style={styles._tab_navigation}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigation.navigate("Home")}>
             <Feather name="home" size={24} color="#5E5E5E" />
             <Text style={styles.empty_text}></Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigation.navigate("Search")}>
             <FontAwesome name="search" size={24} color="#5E5E5E" />
             <Text style={styles.empty_text}></Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => props.navigation.navigate("Shopping")}>
             <Entypo name="shopping-bag" size={24} color="#5E5E5E" />
             <Text style={styles.empty_text}></Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles._active_tab}>
+          <TouchableOpacity style={styles._active_tab} onPress={() => props.navigation.navigate("ProfileCard")}>
             <FontAwesome5 name="user-alt" size={24} color="#FC6100" />
             <Text style={styles._active_dot}>.</Text>
           </TouchableOpacity>

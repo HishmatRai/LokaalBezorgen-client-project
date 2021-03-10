@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, Dimensions, TextInput, StatusBar, ScrollView, TouchableOpacity } from "react-native";
 import { Entypo, Ionicons, MaterialIcons, Zocial } from '@expo/vector-icons';
+import HidePassword from './../../components/HidePassword/HidePassword'
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
 
@@ -24,16 +25,29 @@ const Signup = (props) => {
       <View style={styles._main}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles._sign_up_heading}>Aanmelden</Text>
+
           <View style={styles._email_input_view}>
-            <TextInput style={styles._input} placeholder="Naam" />
+            <Text style={styles._title}>NAAM</Text>
+            <View style={styles._input_main}>
+              <TextInput style={styles._input} />
+              <Ionicons name="checkmark-sharp" size={24} color="#2B2B2B" />
+            </View>
           </View>
+
           <View style={styles._email_input_view}>
-            <TextInput style={styles._input} placeholder="E-mailadres" />
+            <Text style={styles._title}>E-MAILADRES</Text>
+            <View style={styles._input_main}>
+              <TextInput style={styles._input} />
+              <Ionicons name="checkmark-sharp" size={24} color="#2B2B2B" />
+            </View>
           </View>
-          <View style={styles._email_input_view}>
-            <TextInput style={styles._input} placeholder="Wachtwoord" secureTextEntry={true} />
+
+          <View style={styles._email_input_view2}>
+            <Text style={styles._title}>WACHWOORD</Text>
+            <HidePassword />
           </View>
-          <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("login")}>
+
+          <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("ProfileCard")}>
             <Text style={styles._button_txt}>Aanmelden</Text>
           </TouchableOpacity>
           <View style={{ marginBottom: 30 }}></View>
@@ -61,17 +75,19 @@ const styles = StyleSheet.create({
   },
   _email_input_view: {
     width: "100%",
-    borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 20,
-    marginTop:30
+    borderBottomColor: "#E0E0E0",
+    borderBottomWidth: 1,
+    marginTop: 30
+  },
+  _email_input_view2: {
+    width: "100%",
+    marginTop: 30
   },
   _input: {
-    // fontWeight: "bold",
     color: "gray",
     height: 40,
-    paddingLeft: 20,
-    paddingRight: 20
+    // backgroundColor:"red",
+    width: "90%",
   },
   button: {
     backgroundColor: "orange",
@@ -89,6 +105,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     letterSpacing: 2
   },
+  _title: {
+    color: "gray",
+    fontSize: 12,
+    letterSpacing: 0
+  },
+  _input_main: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+  }
 });
 
 export default Signup;

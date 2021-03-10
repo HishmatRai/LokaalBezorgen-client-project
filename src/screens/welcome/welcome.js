@@ -42,7 +42,7 @@ const Welcome = (props) => {
                 <Text style={{ color: "#5E5E5E" }}>Telefoonnummer</Text>
                 <TextInput style={styles.textInput} keyboardType="numeric" />
               </View>
-              <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("login")}>
+              <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate("Verification")}>
             <Text style={styles._button_txt}>Registreren</Text>
           </TouchableOpacity>
     
